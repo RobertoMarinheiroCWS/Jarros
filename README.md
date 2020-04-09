@@ -27,7 +27,5 @@
 ### Respostas
 1.
     1. x = litros no jarro de 4 litros
-    <br>
     y = litros no jarro de 3 litros
-    <br>
     Espaço de estados = (x, y) tal que x está em {0, 1, 2, 3, 4}, y está em {1, 2, 3}

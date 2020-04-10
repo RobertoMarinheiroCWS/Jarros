@@ -40,13 +40,13 @@ class Node:
         if offer_left_over < 0:
             offer_left_over = 0
         offer_can_give = offerer - offer_left_over
-        new_receiver = receiver + offer_can_give
         new_offer = offerer - offer_can_give
+        new_receiver = receiver + offer_can_give
         self.childrens.append(Node(new_receiver, new_offer))
 
     def expansion(self):
-        if (self.x == 0 and self.y == 2) or (self.x == 2 and self.y == 0):  # If is goal, set, and return
-            self.goal = 1
+        if self.x == 2 and self.y == 0:  # If is goal, set, and return ( (self.x == 0 and self.y == 2) almost a goal)
+            self.goal = 1  # All nodes with goal = 1, are a goal node
             return
         elif self.already_visited():  # Check if this node already been visited (fuck off if it was in this subtree
             # or not) @ToDo -> make this shit better
@@ -69,7 +69,6 @@ class Node:
             if node.x == self.x and node.y == self.y:
                 return True
         return False
-
 
 if __name__ == "__main__":
     x = 0
